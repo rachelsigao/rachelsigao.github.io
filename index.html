@@ -1,116 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Rachel Sigao | DevOps Engineer</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rachel Sigao — DevOps / Cloud Engineer portfolio. AWS, Linux, Docker, Kubernetes, Terraform, CI/CD and DevSecOps.">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Rachel Sigao | DevOps / Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="progress-bar" id="progressBar"></div>
 
-    <nav>
-        <h2>Rachel Sigao</h2>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Rachel Sigao home">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span>RACHEL SIGAO</span>
+    </a>
 
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#github">GitHub</a>
+      <a href="#contact">Contact</a>
     </nav>
 
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+  </header>
 
-    <section class="hero">
-
-        <p>HELLO, I'M</p>
-
-        <h1>Your Name</h1>
-
-        <h2>DevOps & Cloud Engineer</h2>
-
-        <p>
-            AWS • Linux • Docker • Kubernetes • Terraform
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> OPEN TO JUNIOR DEVOPS / CLOUD OPPORTUNITIES</div>
+        <h1>DevOps<br><span>&amp; Cloud</span><br>Engineer.</h1>
+        <p class="hero-text">
+          I build reliable, secure and automated cloud environments —
+          turning infrastructure into repeatable, observable and scalable systems.
         </p>
 
-        <button>View My Projects</button>
-
-    </section>
-
-
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            I am a DevOps and Cloud enthusiast focused on
-            building secure, scalable and automated infrastructure.
-        </p>
-
-    </section>
-
-
-    <section id="skills">
-
-        <h2>Technical Skills</h2>
-
-        <p>AWS</p>
-        <p>Linux</p>
-        <p>Docker</p>
-        <p>Kubernetes</p>
-        <p>Terraform</p>
-        <p>GitHub Actions</p>
-
-    </section>
-
-
-    <section id="projects">
-
-        <h2>Projects</h2>
-
-        <div>
-            <h3>AWS 3-Tier Architecture</h3>
-
-            <p>
-                Designed a highly available AWS architecture
-                using VPC, ALB, EC2 and RDS.
-            </p>
-
-            <a href="#">View Project</a>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore my work <span>↗</span></a>
+          <a class="button secondary" href="https://github.com/rachelsigao" target="_blank" rel="noopener">GitHub <span>↗</span></a>
         </div>
 
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/rachelsigao" target="_blank" rel="noopener">LinkedIn</a>
+          <span>•</span>
+          <a href="https://github.com/rachelsigao" target="_blank" rel="noopener">GitHub</a>
+          <span>•</span>
+          <a href="mailto:rachelsigao@example.com">Email</a>
+        </div>
+      </div>
 
-        <div>
-            <h3>CI/CD Pipeline</h3>
+      <div class="hero-photo-wrap reveal">
+        <div class="photo-frame">
+          <img src="assets/profile.jpg" alt="Rachel Sigao professional portrait">
+          <div class="photo-label">
+            <span>RACHEL SIGAO</span>
+            <small>DEVOPS / CLOUD ENGINEER</small>
+          </div>
+        </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
+    </section>
 
-            <p>
-                Built an automated CI/CD pipeline using
-                GitHub Actions and Docker.
-            </p>
+    <section class="ticker" aria-label="Technology stack">
+      <div class="ticker-track">
+        <span>AWS</span><i>✦</i><span>LINUX</span><i>✦</i><span>DOCKER</span><i>✦</i>
+        <span>KUBERNETES</span><i>✦</i><span>TERRAFORM</span><i>✦</i><span>GITHUB ACTIONS</span><i>✦</i>
+        <span>DEVSECOPS</span><i>✦</i><span>CI/CD</span><i>✦</i>
+        <span>AWS</span><i>✦</i><span>LINUX</span><i>✦</i><span>DOCKER</span><i>✦</i>
+        <span>KUBERNETES</span><i>✦</i><span>TERRAFORM</span><i>✦</i><span>GITHUB ACTIONS</span><i>✦</i>
+      </div>
+    </section>
 
-            <a href="#">View Project</a>
+    <section class="section content-section" id="about">
+      <div class="section-number">01</div>
+      <div class="section-content">
+        <div class="section-heading reveal">
+          <p class="section-kicker">ABOUT</p>
+          <h2>Engineering with<br><span>automation in mind.</span></h2>
         </div>
 
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">
+              I am Rachel Sigao, a DevOps / Cloud Engineer focused on AWS,
+              infrastructure automation, CI/CD and secure cloud operations.
+            </p>
+            <p>
+              My goal is to build systems that are not only functional, but also
+              repeatable, secure, observable and easy to maintain. I enjoy learning
+              how each layer fits together — from Linux and networking to cloud
+              architecture, containers, infrastructure as code and deployment automation.
+            </p>
+            <p>
+              This portfolio is also a living DevOps project: the code is versioned
+              in GitHub, deployed through GitHub Actions and hosted with GitHub Pages.
+            </p>
+          </div>
+
+          <div class="terminal-card reveal">
+            <div class="terminal-top">
+              <span></span><span></span><span></span>
+              <label>rachel@devops:~</label>
+            </div>
+            <div class="terminal-body">
+              <p><b>$</b> whoami</p>
+              <p class="green">rachel.sigao</p>
+              <p><b>$</b> focus --current</p>
+              <p class="green">AWS · DevOps · Cloud · DevSecOps</p>
+              <p><b>$</b> automation --status</p>
+              <p class="green">ACTIVE ✓</p>
+              <p><b>$</b> infrastructure --mindset</p>
+              <p class="green">reliable · repeatable · secure</p>
+              <p><b>$</b> deploy</p>
+              <p class="cursor">█</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <section class="section content-section dark-section" id="skills">
+      <div class="section-number">02</div>
+      <div class="section-content">
+        <div class="section-heading reveal">
+          <p class="section-kicker">TECHNICAL SKILLS</p>
+          <h2>The tools I use to<br><span>build and automate.</span></h2>
+        </div>
 
-    <section id="contact">
-
-        <h2>Contact</h2>
-
-        <a href="https://github.com/YOUR-USERNAME">
-            GitHub
-        </a>
-
-        <a href="#">
-            LinkedIn
-        </a>
-
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-index">01</span>
+            <h3>Cloud</h3>
+            <p>AWS · IAM · VPC · EC2 · ALB · RDS · S3 · CloudWatch</p>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">02</span>
+            <h3>DevOps</h3>
+            <p>Git · GitHub · GitHub Actions · CI/CD · Jenkins · Docker</p>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">03</span>
+            <h3>Infrastructure</h3>
+            <p>Terraform · Linux · Networking · Infrastructure as Code</p>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">04</span>
+            <h3>Containers</h3>
+            <p>Docker · Kubernetes · Containerization · Deployment patterns</p>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">05</span>
+            <h3>Security</h3>
+            <p>DevSecOps · IAM · Least privilege · Secrets · Secure pipelines</p>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">06</span>
+            <h3>Automation</h3>
+            <p>Bash · Python fundamentals · GitHub Actions · Repeatable workflows</p>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <section class="section content-section" id="projects">
+      <div class="section-number">03</div>
+      <div class="section-content">
+        <div class="section-heading reveal">
+          <p class="section-kicker">SELECTED PROJECTS</p>
+          <h2>Projects that show<br><span>how I think.</span></h2>
+        </div>
 
+        <div class="project-list">
+          <article class="project reveal">
+            <div class="project-number">01</div>
+            <div class="project-main">
+              <div class="project-title-row">
+                <h3>AWS Highly Available 3-Tier Architecture</h3>
+                <a href="https://github.com/rachelsigao" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+              <p>
+                Designed a secure, highly available application architecture using
+                a VPC, public/private subnets, Application Load Balancer, EC2 and RDS
+                across multiple Availability Zones.
+              </p>
+              <div class="tags"><span>AWS</span><span>VPC</span><span>EC2</span><span>ALB</span><span>RDS</span><span>IAM</span></div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-number">02</div>
+            <div class="project-main">
+              <div class="project-title-row">
+                <h3>Automated CI/CD Pipeline</h3>
+                <a href="https://github.com/rachelsigao" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+              <p>
+                Built a pipeline that takes source code from GitHub through automated
+                validation, containerization and deployment, demonstrating repeatable
+                software delivery.
+              </p>
+              <div class="tags"><span>GitHub Actions</span><span>Docker</span><span>CI/CD</span><span>AWS</span></div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-number">03</div>
+            <div class="project-main">
+              <div class="project-title-row">
+                <h3>Infrastructure as Code with Terraform</h3>
+                <a href="https://github.com/rachelsigao" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+              <p>
+                Provisioned cloud infrastructure declaratively and organized reusable
+                resources to make environments consistent, reviewable and reproducible.
+              </p>
+              <div class="tags"><span>Terraform</span><span>AWS</span><span>IaC</span><span>Git</span></div>
+            </div>
+          </article>
+        </div>
+
+        <p class="editable-note">Project descriptions and GitHub links are ready to replace with your real repositories as you build them.</p>
+      </div>
+    </section>
+
+    <section class="section content-section dark-section" id="experience">
+      <div class="section-number">04</div>
+      <div class="section-content">
+        <div class="section-heading reveal">
+          <p class="section-kicker">EXPERIENCE &amp; LEARNING</p>
+          <h2>Building depth,<br><span>one layer at a time.</span></h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">CURRENT FOCUS</div>
+            <h3>DevOps / Cloud Engineering</h3>
+            <p>Hands-on learning across AWS architecture, Linux, networking, Docker, Terraform, CI/CD and DevSecOps.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">FOUNDATION</div>
+            <h3>Automation &amp; Cloud Fundamentals</h3>
+            <p>Developing practical understanding of version control, infrastructure, deployment workflows, security and reliability.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">NEXT</div>
+            <h3>Kubernetes &amp; Production Patterns</h3>
+            <p>Expanding into container orchestration, observability, advanced CI/CD and production-grade cloud patterns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section" id="github">
+      <div class="section-number">05</div>
+      <div class="section-content">
+        <div class="section-heading reveal">
+          <p class="section-kicker">GITHUB</p>
+          <h2>My activity,<br><span>automatically updated.</span></h2>
+        </div>
+
+        <div class="github-grid">
+          <div class="github-card stats-card reveal">
+            <div class="card-label">GITHUB STATS</div>
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=rachelsigao&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&theme=transparent&title_color=0b0f14&text_color=5b6573&icon_color=0b0f14"
+              alt="Rachel Sigao GitHub statistics"
+              loading="lazy">
+          </div>
+
+          <div class="github-card stats-card reveal">
+            <div class="card-label">TOP LANGUAGES</div>
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=rachelsigao&layout=compact&hide_border=true&theme=transparent&title_color=0b0f14&text_color=5b6573"
+              alt="Rachel Sigao top GitHub languages"
+              loading="lazy">
+          </div>
+
+          <div class="github-card snake-card reveal">
+            <div class="card-label">CONTRIBUTION SNAKE</div>
+            <div class="snake-wrap">
+              <img src="assets/github-contribution-grid-snake.svg" alt="GitHub contribution snake">
+            </div>
+            <p class="snake-note">Updated automatically by GitHub Actions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section contact-section dark-section" id="contact">
+      <div class="section-number">06</div>
+      <div class="section-content">
+        <div class="contact-layout">
+          <div class="section-heading reveal">
+            <p class="section-kicker">CONTACT</p>
+            <h2>Let's build<br><span>something reliable.</span></h2>
+            <p class="contact-copy">
+              If you're looking for a junior DevOps / Cloud Engineer who is serious
+              about automation, cloud fundamentals and continuous learning, let's connect.
+            </p>
+          </div>
+
+          <div class="contact-links reveal">
+            <a href="https://github.com/rachelsigao" target="_blank" rel="noopener">
+              <span>GitHub</span><b>↗</b>
+            </a>
+            <a href="https://www.linkedin.com/in/rachelsigao" target="_blank" rel="noopener">
+              <span>LinkedIn</span><b>↗</b>
+            </a>
+            <a href="mailto:rachelsigao@example.com">
+              <span>Email</span><b>↗</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> RACHEL SIGAO</span>
+    <span>BUILT WITH HTML · CSS · JS · GITHUB ACTIONS</span>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
