@@ -3,9 +3,31 @@ const menuButton = document.getElementById("menuButton");
 const nav = document.getElementById("nav");
 const progressBar = document.getElementById("progressBar");
 const year = document.getElementById("year");
+const themeToggle = document.getElementById("themeToggle");
 
 // Set current year in footer
-year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-theme", isDark);
+  themeToggle.textContent = isDark ? "☀" : "☾";
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  localStorage.setItem("theme", theme);
+}
+
+const savedTheme = localStorage.getItem("theme") || "light";
+applyTheme(savedTheme);
+
+// Theme toggle
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+}
 
 // Mobile menu toggle
 menuButton?.addEventListener("click", () => {
