@@ -307,11 +307,20 @@
           <!-- GITHUB STATS -->
           <div class="github-card stats-card reveal">
             <div class="card-label">GITHUB STATS</div>
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=rachelsigao&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=transparent&title_color=9b6cff&text_color=5b6573&icon_color=9b6cff"
-              alt="Rachel Sigao GitHub statistics"
-              loading="lazy"
-            >
+            <div class="github-stats-box" id="githubStatsBox">
+              <div class="github-stat-item">
+                <span class="github-stat-label">Repos</span>
+                <strong class="github-stat-value" id="repoCount">--</strong>
+              </div>
+              <div class="github-stat-item">
+                <span class="github-stat-label">Followers</span>
+                <strong class="github-stat-value" id="followersCount">--</strong>
+              </div>
+              <div class="github-stat-item">
+                <span class="github-stat-label">Following</span>
+                <strong class="github-stat-value" id="followingCount">--</strong>
+              </div>
+            </div>
           </div>
 
           <!-- CONTRIBUTION SNAKE -->
@@ -319,15 +328,15 @@
             <div class="card-label">CONTRIBUTION SNAKE</div>
             <div class="snake-wrap">
               <picture>
-
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="https://raw.githubusercontent.com/rachelsigao/rachelsigao.github.io/output/github-contribution-grid-snake-dark.svg"
+                  srcset="output/github-contribution-grid-snake-dark.svg?v=2"
                 >
                 <img
-                  src="https://raw.githubusercontent.com/rachelsigao/rachelsigao.github.io/output/github-contribution-grid-snake.svg"
+                  src="output/github-contribution-grid-snake.svg?v=2"
                   alt="Rachel Sigao GitHub contribution snake"
                   loading="lazy"
+                  onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/rachelsigao/rachelsigao.github.io/main/output/github-contribution-grid-snake.svg';"
                 >
               </picture>
             </div>
