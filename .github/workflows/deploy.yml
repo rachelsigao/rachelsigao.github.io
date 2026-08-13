@@ -1,21 +1,27 @@
+# GitHub Actions workflow to deploy portfolio to GitHub Pages
 name: Deploy portfolio to GitHub Pages
 
+# Trigger deployment on push to main branch or manual workflow dispatch
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
 
+# Grant permissions for GitHub Pages deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Prevent concurrent deployments
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
+# Job to build and deploy
 jobs:
   deploy:
+    # Set GitHub Pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -23,17 +29,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out repository code
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Configure GitHub Pages settings
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      # Upload built website as artifact
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: "."
 
+      # Deploy artifact to GitHub Pages
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,18 +1,23 @@
+# Generate GitHub contribution snake visualization
 name: Generate GitHub contribution snake
 
+# Trigger on daily schedule (17:00 UTC) or manual dispatch
 on:
   schedule:
     - cron: "17 0 * * *"
   workflow_dispatch:
 
+# Grant write permission for committing changes
 permissions:
   contents: write
 
+# Jobs to generate and commit snake artifact
 jobs:
   generate:
     runs-on: ubuntu-latest
 
     steps:
+      # Generate contribution snake SVG from GitHub activity
       - name: Generate snake
         uses: Platane/snk/svg-only@v3
         with:
@@ -21,6 +26,7 @@ jobs:
             assets/github-contribution-grid-snake.svg
             assets/github-contribution-grid-snake-dark.svg?palette=github-dark
 
+      # Commit and push updated snake visualization
       - name: Commit updated snake
         uses: EndBug/add-and-commit@v9
         with:
