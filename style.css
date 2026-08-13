@@ -254,7 +254,7 @@ a { color: inherit; }
 .hero-photo-wrap {
   position: relative;
   justify-self: end;
-  width: min(470px, 100%);
+  width: min(400px, 100%);
   aspect-ratio: 4 / 5;
 }
 
