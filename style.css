@@ -2,13 +2,13 @@
   --ink: #0b0f14;
   --muted: #65707d;
   --line: #dfe4e8;
-  --soft: #f5f2ff;
+  --soft: #f5f7f8;
   --paper: #ffffff;
-  --green: #9b6cff;
-  --green-dark: #7040d8;
+  --green: #36d67a;
+  --green-dark: #0c9b4c;
   --dark: #0b0f14;
   --dark-soft: #121820;
-  --dark-line: #2b2440;
+  --dark-line: #27313b;
   --max: 1240px;
   --radius: 18px;
 }
@@ -121,9 +121,9 @@ a { color: inherit; }
 .hero {
   min-height: calc(100vh - 76px);
   display: grid;
-  grid-template-columns: .82fr 1.18fr;
+  grid-template-columns: 1.05fr .95fr;
   align-items: center;
-  gap: 7vw;
+  gap: 6vw;
   padding-top: 7vh;
   padding-bottom: 8vh;
 }
@@ -150,15 +150,11 @@ a { color: inherit; }
 }
 
 .hero h1 {
-  margin: 10px 0 18px;
-  font-size: clamp(48px, 6vw, 76px);
-  line-height: .95;
-  letter-spacing: -.06em;
+  margin: 25px 0 20px;
+  font-size: clamp(60px, 8.5vw, 122px);
+  line-height: .88;
+  letter-spacing: -.075em;
   font-weight: 800;
-}
-
-.hero .eyebrow {
-  color: var(--green-dark);
 }
 
 .hero h1 span,
@@ -223,8 +219,8 @@ a { color: inherit; }
 
 .hero-photo-wrap {
   position: relative;
-  justify-self: center;
-  width: min(340px, 100%);
+  justify-self: end;
+  width: min(470px, 100%);
   aspect-ratio: 4 / 5;
 }
 
@@ -235,15 +231,14 @@ a { color: inherit; }
   height: 100%;
   overflow: hidden;
   background: #e9edf0;
-  border-radius: 10px;
-  box-shadow: 0 24px 60px rgba(11,15,20,.14), 0 0 0 1px rgba(155,108,255,.28);
+  border-radius: 4px;
 }
 
 .photo-frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(155,108,255,.10), transparent 50%);
+  background: linear-gradient(135deg, rgba(54,214,122,.08), transparent 50%);
   pointer-events: none;
 }
 
@@ -744,11 +739,11 @@ footer a {
   .section { width: min(92vw, var(--max)); }
   .dark-section { padding-left: 4vw; padding-right: 4vw; }
 
-  .hero h1 { font-size: 46px; }
+  .hero h1 { font-size: 58px; }
   .hero-text { font-size: 15px; }
 
   .hero-links { flex-wrap: wrap; }
-  .hero-photo-wrap { width: min(280px, 86vw); }
+  .hero-photo-wrap { width: 92%; }
 
   .skills-grid { grid-template-columns: 1fr; }
   .skill-card { min-height: 180px; }
