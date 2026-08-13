@@ -2,19 +2,42 @@
    CUSTOM PROPERTIES & GLOBAL STYLES
    ============================================ */
 :root {
-  /* Color variables for light and dark themes */
-  --ink: #0b0f14;
-  --muted: #65707d;
-  --line: #dfe4e8;
-  --soft: #f5f7f8;
-  --paper: #ffffff;
-  --green: #36d67a;
-  --green-dark: #0c9b4c;
-  --dark: #0b0f14;
-  --dark-soft: #121820;
-  --dark-line: #27313b;
-  --max: 1240px;
-  --radius: 18px;
+  /* Light theme */
+  --bg: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --surface: #ffffff;
+
+  --text: #0b0f14;
+  --text-muted: #5b6573;
+  --text-light: #7a8491;
+
+  --border: #e5e8ec;
+  --border-strong: #d7dce2;
+
+  --accent: #6f42c1;
+
+  --shadow: rgba(11, 15, 20, 0.08);
+}
+
+/* =========================
+   DARK THEME
+========================= */
+
+[data-theme="dark"] {
+  --bg: #080b12;
+  --bg-secondary: #0d111a;
+  --surface: #10151f;
+
+  --text: #f2f4f7;
+  --text-muted: #a5adba;
+  --text-light: #7f8997;
+
+  --border: #202735;
+  --border-strong: #303949;
+
+  --accent: #a98cff;
+
+  --shadow: rgba(0, 0, 0, 0.35);
 }
 
 * { box-sizing: border-box; }
@@ -28,11 +51,15 @@ html {
 /* Base typography and spacing */
 body {
   margin: 0;
-  color: var(--ink);
-  background: var(--paper);
+  color: var(--text);
+  background: var(--bg);
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+
 }
 
 a { color: inherit; }
@@ -623,6 +650,7 @@ a { color: inherit; }
 
 .education-year {
   color: var(--accent);
+
   font-family: monospace;
   font-size: 14px;
 }
@@ -630,15 +658,17 @@ a { color: inherit; }
 .education-content h3 {
   margin: 0 0 8px;
 
+  color: var(--text);
+
   font-size: 22px;
 }
 
 .education-school {
   margin-bottom: 10px;
 
-  font-weight: 600;
-
   color: var(--text);
+
+  font-weight: 600;
 }
 
 .education-content p {
@@ -901,4 +931,35 @@ footer a {
     flex-direction: column;
     text-align: center;
   }
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+  color: var(--text);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+
+  color: var(--accent);
 }
