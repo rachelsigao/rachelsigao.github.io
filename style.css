@@ -608,42 +608,39 @@ a { color: inherit; }
 ========================= */
 
 .education-list {
-  border-top: 1px solid var(--border);
+  margin-top: 52px;
+  border-top: 1px solid var(--line);
 }
 
 .education-item {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 40px;
-
   padding: 35px 0;
-
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--line);
 }
 
 .education-year {
-  color: var(--accent);
-  font-family: monospace;
-  font-size: 14px;
+  color: var(--green-dark);
+  font: 600 13px "JetBrains Mono", monospace;
+  letter-spacing: .08em;
 }
 
 .education-content h3 {
   margin: 0 0 8px;
-
   font-size: 22px;
+  letter-spacing: -.03em;
 }
 
 .education-school {
-  margin-bottom: 10px;
-
+  margin: 0 0 10px;
   font-weight: 600;
-
-  color: var(--text);
+  color: var(--ink);
 }
 
 .education-content p {
-  color: var(--text-muted);
-
+  margin: 0;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.7;
 }
