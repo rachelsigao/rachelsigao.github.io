@@ -603,6 +603,50 @@ a { color: inherit; }
   color: #9aa5ae;
   font: 500 11px "JetBrains Mono", monospace;
 }
+/* =========================
+   EDUCATION
+========================= */
+
+.education-list {
+  border-top: 1px solid var(--border);
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 40px;
+
+  padding: 35px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.education-year {
+  color: var(--accent);
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.education-content h3 {
+  margin: 0 0 8px;
+
+  font-size: 22px;
+}
+
+.education-school {
+  margin-bottom: 10px;
+
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+.education-content p {
+  color: var(--text-muted);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
 
 /* ============================================
    TIMELINE & GITHUB
