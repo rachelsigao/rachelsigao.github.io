@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rachel Sigao — DevOps / Cloud Engineer portfolio. AWS, Linux, Docker, Kubernetes, Terraform, CI/CD and DevSecOps.">
   <meta name="theme-color" content="#0b0f14">
-  
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
   <title>Rachel Sigao | DevOps / Cloud Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +13,8 @@
 </head>
 
 <body>
-  <!-- Progress bar (shows scroll progress) -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Top navigation: brand, links, and mobile menu -->
   <header class="topbar">
     <a class="brand" href="#home" aria-label="Rachel Sigao home">
       <span class="brand-mark">&lt;/&gt;</span>
@@ -38,59 +33,23 @@
     <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
   </header>
 
-  <!-- Main content: hero, sections (about, skills, projects, experience, github, contact) -->
   <main>
-    <!-- Hero section: name, role, intro and CTAs -->
     <section class="hero section" id="home">
-      
-    <div class="hero-copy">
+      <div class="hero-photo-wrap reveal">
+        <div class="photo-frame">
+          <img src="assets/profile.jpg" alt="Rachel Sigao professional portrait">
+          <div class="photo-label">
+            <span>RACHEL SIGAO</span>
+            <small>DEVOPS / CLOUD ENGINEER</small>
+          </div>
+        </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
 
-    <h1>
-        RACHEL SIGAO
-    </h1>
-
-    <div class="hero-role">
-        DEVOPS / CLOUD ENGINEER
-    </div>
-
-    <p class="hero-text">
-        I design, automate and optimize scalable cloud
-        infrastructure and CI/CD pipelines to deliver
-        secure and reliable solutions.
-    </p>
-
-    <div class="hero-actions">
-
-        <a class="button primary" href="#projects">
-            View Projects ↗
-        </a>
-
-        <a class="button secondary" href="#">
-            Download Resume ↓
-        </a>
-
-    </div>
-
-    <div class="hero-links">
-
-        <a href="https://github.com/rachelsigao"
-           target="_blank">
-            GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/rachelsigao"
-           target="_blank">
-            LinkedIn
-        </a>
-
-        <a href="mailto:YOUR_EMAIL@gmail.com">
-            Email
-        </a>
-
-    </div>
-
-  </div>
-
+      <div class="hero-copy reveal">
+        <div class="eyebrow">DEVOPS / CLOUD ENGINEER</div>
+        <h1>RACHEL SIGAO</h1>
         <p class="hero-text">
           I build reliable, secure and automated cloud environments —
           turning infrastructure into repeatable, observable and scalable systems.
@@ -109,23 +68,8 @@
           <a href="mailto:rachelsigao@example.com">Email</a>
         </div>
       </div>
-
-      <!-- Profile photo area: adjust image size in style.css (.photo-frame img) -->
-      <div class="hero-photo-wrap reveal">
-        <div class="photo-frame">
-          <!-- Profile image: change max-width in CSS to resize -->
-          <img src="assets/profile.jpg" alt="Rachel Sigao professional portrait">
-          <div class="photo-label">
-            <span>RACHEL SIGAO</span>
-            <small>DEVOPS / CLOUD ENGINEER</small>
-          </div>
-        </div>
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-      </div>
     </section>
 
-    <!-- Ticker: scrolling technology stack labels -->
     <section class="ticker" aria-label="Technology stack">
       <div class="ticker-track">
         <span>AWS</span><i>✦</i><span>LINUX</span><i>✦</i><span>DOCKER</span><i>✦</i>
@@ -136,7 +80,6 @@
       </div>
     </section>
 
-    <!-- About: short bio and terminal-style summary -->
     <section class="section content-section" id="about">
       <div class="section-number">01</div>
       <div class="section-content">
@@ -163,7 +106,6 @@
             </p>
           </div>
 
-          <!-- Terminal card: decorative console with short commands -->
           <div class="terminal-card reveal">
             <div class="terminal-top">
               <span></span><span></span><span></span>
@@ -186,7 +128,6 @@
       </div>
     </section>
 
-    <!-- Skills: list of technical skills and categories -->
     <section class="section content-section dark-section" id="skills">
       <div class="section-number">02</div>
       <div class="section-content">
@@ -230,7 +171,6 @@
       </div>
     </section>
 
-    <!-- Projects: selected project summaries and links -->
     <section class="section content-section" id="projects">
       <div class="section-number">03</div>
       <div class="section-content">
@@ -292,7 +232,6 @@
       </div>
     </section>
 
-    <!-- Experience: timeline of focus and learning areas -->
     <section class="section content-section dark-section" id="experience">
       <div class="section-number">04</div>
       <div class="section-content">
@@ -324,7 +263,6 @@
       </div>
     </section>
 
-    <!-- GitHub: dynamic stats and contribution visuals -->
     <section class="section content-section" id="github">
       <div class="section-number">05</div>
       <div class="section-content">
@@ -361,7 +299,6 @@
       </div>
     </section>
 
-    <!-- Contact: links to GitHub, LinkedIn, and email -->
     <section class="section content-section contact-section dark-section" id="contact">
       <div class="section-number">06</div>
       <div class="section-content">
@@ -391,14 +328,12 @@
     </section>
   </main>
 
-  <!-- Footer: copyright and build info -->
   <footer>
     <span>© <span id="year"></span> RACHEL SIGAO</span>
     <span>BUILT WITH HTML · CSS · JS · GITHUB ACTIONS</span>
     <a href="#home">BACK TO TOP ↑</a>
   </footer>
 
-  <!-- Page JavaScript: handles interactive UI (menu, progress bar, reveals) -->
   <script src="script.js"></script>
 </body>
 </html>
