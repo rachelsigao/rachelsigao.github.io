@@ -614,15 +614,15 @@ a { color: inherit; }
 
 .education-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 24px;
-  padding: 35px 0;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  padding: 30px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .education-year {
   color: var(--green-dark);
-  font: 600 13px "JetBrains Mono", monospace;
+  font: 600 12px "JetBrains Mono", monospace;
   letter-spacing: .08em;
 }
 
@@ -633,7 +633,7 @@ a { color: inherit; }
 }
 
 .education-school {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 600;
   color: var(--ink);
 }
