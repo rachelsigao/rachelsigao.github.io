@@ -41,47 +41,4 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all elements with reveal class
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-// =========================
-// DARK MODE
-// =========================
 
-const themeToggle = document.getElementById("themeToggle");
-
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-
-  if (themeToggle) {
-    themeToggle.textContent = "☀";
-  }
-}
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-
-    const isDark =
-      document.documentElement.getAttribute("data-theme") === "dark";
-
-    if (isDark) {
-
-      document.documentElement.removeAttribute("data-theme");
-
-      localStorage.setItem("theme", "light");
-
-      themeToggle.textContent = "☾";
-
-    } else {
-
-      document.documentElement.setAttribute(
-        "data-theme",
-        "dark"
-      );
-
-      localStorage.setItem("theme", "dark");
-
-      themeToggle.textContent = "☀";
-    }
-
-  });
-}
