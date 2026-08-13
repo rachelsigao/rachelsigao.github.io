@@ -19,17 +19,16 @@ jobs:
     steps:
       # Generate contribution snake SVG from GitHub activity
       - name: Generate snake
-        uses: Platane/snk/svg-only@v3
+        uses: Platane/snk@v3
         with:
           github_user_name: rachelsigao
           outputs: |
-            dist/snake.svg
+            output/github-contribution-grid-snake.svg
+            output/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       # Commit and push updated snake visualization
       - name: Commit updated snake
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: EndBug/add-and-commit@v9
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: "Update GitHub contribution snake"
+          add: "output/*.svg"
