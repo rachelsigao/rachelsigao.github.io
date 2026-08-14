@@ -68,10 +68,9 @@ const repoCount = document.getElementById("repoCount");
 const followersCount = document.getElementById("followersCount");
 const followingCount = document.getElementById("followingCount");
 const totalCommits = document.getElementById("totalCommits");
-const topLanguage = document.getElementById("topLanguage");
 
 if (repoCount && followersCount && followingCount && totalCommits) {
-  const statItems = [repoCount, followersCount, followingCount, totalCommits, ...(topLanguage ? [topLanguage] : [])];
+  const statItems = [repoCount, followersCount, followingCount, totalCommits];
 
   statItems.forEach(item => {
     item.textContent = "Loading...";
@@ -104,38 +103,12 @@ if (repoCount && followersCount && followingCount && totalCommits) {
       followersCount.textContent = profile.followers ?? "--";
       followingCount.textContent = profile.following ?? "--";
       totalCommits.textContent = commitData.total_count ?? "--";
-
-      if (topLanguage) {
-        const reposResponse = await fetch("https://api.github.com/users/rachelsigao/repos?per_page=100", { headers });
-        if (!reposResponse.ok) {
-          throw new Error("GitHub repo request failed");
-        }
-
-        const repos = await reposResponse.json();
-        const languageTotals = {};
-
-        const languageResponses = await Promise.all(
-          repos
-            .filter(repo => repo.languages_url)
-            .map(repo => fetch(repo.languages_url, { headers }).then(res => (res.ok ? res.json() : {})))
-        );
-
-        languageResponses.forEach(languageMap => {
-          Object.entries(languageMap).forEach(([language, bytes]) => {
-            languageTotals[language] = (languageTotals[language] || 0) + bytes;
-          });
-        });
-
-        const topLang = Object.entries(languageTotals).sort((a, b) => b[1] - a[1])[0];
-        topLanguage.textContent = topLang ? topLang[0] : "N/A";
-      }
     })
     .catch(() => {
       repoCount.textContent = "N/A";
       followersCount.textContent = "N/A";
       followingCount.textContent = "N/A";
       totalCommits.textContent = "N/A";
-      if (topLanguage) topLanguage.textContent = "N/A";
     })
     .finally(() => {
       statItems.forEach(item => {

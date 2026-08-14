@@ -166,6 +166,18 @@ body.dark-theme .nav a {
 
 body.dark-theme .nav a:hover { color: var(--ink); }
 
+body.dark-theme .button.primary {
+  color: #07110d;
+  background: var(--green);
+  border-color: var(--green);
+}
+
+body.dark-theme .button.primary:hover {
+  background: var(--green-dark);
+  color: #ffffff;
+  border-color: var(--green-dark);
+}
+
 body.dark-theme .button.secondary {
   background: var(--soft);
   color: var(--ink);
@@ -779,18 +791,8 @@ body.dark-theme .button.secondary:hover {
 
 .github-stats-box {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-}
-
-@media (max-width: 600px) {
-  .github-stats-box {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .github-stat-item-wide {
-    grid-column: span 2;
-  }
 }
 
 .github-stat-item {
@@ -805,8 +807,17 @@ body.dark-theme .button.secondary:hover {
   min-height: 110px;
 }
 
-.github-stat-item-wide {
-  grid-column: span 2;
+.github-stat-item:first-child,
+.github-stat-item:nth-child(2),
+.github-stat-item:nth-child(3),
+.github-stat-item:nth-child(4) {
+  grid-column: auto;
+}
+
+@media (max-width: 600px) {
+  .github-stats-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 600px) {
