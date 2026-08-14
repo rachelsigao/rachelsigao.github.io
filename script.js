@@ -4,7 +4,6 @@ const nav = document.getElementById("nav");
 const progressBar = document.getElementById("progressBar");
 const year = document.getElementById("year");
 const themeToggle = document.getElementById("themeToggle");
-const snakeSource = document.querySelector('.snake-wrap source');
 const snakeImage = document.querySelector('.snake-wrap img');
 
 // Set current year in footer
@@ -21,15 +20,15 @@ function applyTheme(theme) {
     themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
   }
 
-  if (snakeSource && snakeImage) {
+  if (snakeImage) {
     const cacheBust = Date.now();
     const snakeBase = 'https://rachelsigao.github.io/output';
     const lightSnakeUrl = `${snakeBase}/github-contribution-grid-snake.svg?v=${cacheBust}`;
     const darkSnakeUrl = `${snakeBase}/github-contribution-grid-snake-dark.svg?v=${cacheBust}`;
     const chosenUrl = isDark ? darkSnakeUrl : lightSnakeUrl;
 
-    snakeSource.srcset = chosenUrl;
     snakeImage.src = chosenUrl;
+    snakeImage.srcset = chosenUrl;
   }
 
   try {
@@ -135,16 +134,18 @@ if (repoCount && followersCount && followingCount && totalCommits && contributio
     });
 }
 
-if (snakeSource && snakeImage) {
+if (snakeImage) {
   const cacheBust = Date.now();
   const snakeBase = 'https://rachelsigao.github.io/output';
-  const darkSnakeUrl = `${snakeBase}/github-contribution-grid-snake-dark.svg?v=${cacheBust}`;
   const lightSnakeUrl = `${snakeBase}/github-contribution-grid-snake.svg?v=${cacheBust}`;
+  const darkSnakeUrl = `${snakeBase}/github-contribution-grid-snake-dark.svg?v=${cacheBust}`;
+  const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+  const chosenUrl = currentTheme === "dark" ? darkSnakeUrl : lightSnakeUrl;
 
-  snakeSource.srcset = darkSnakeUrl;
-  snakeImage.src = lightSnakeUrl;
+  snakeImage.src = chosenUrl;
+  snakeImage.srcset = chosenUrl;
   snakeImage.onerror = () => {
-    snakeImage.src = `https://raw.githubusercontent.com/rachelsigao/rachelsigao.github.io/main/output/github-contribution-grid-snake.svg?v=${cacheBust}`;
+    snakeImage.src = `https://raw.githubusercontent.com/rachelsigao/rachelsigao.github.io/main/output/${currentTheme === "dark" ? "github-contribution-grid-snake-dark" : "github-contribution-grid-snake"}.svg?v=${cacheBust}`;
   };
 }
 
