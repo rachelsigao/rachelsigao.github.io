@@ -19,6 +19,17 @@ function applyTheme(theme) {
     themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
   }
 
+  if (snakeSource && snakeImage) {
+    const cacheBust = Date.now();
+    const snakeBase = 'https://rachelsigao.github.io/output';
+    const lightSnakeUrl = `${snakeBase}/github-contribution-grid-snake.svg?v=${cacheBust}`;
+    const darkSnakeUrl = `${snakeBase}/github-contribution-grid-snake-dark.svg?v=${cacheBust}`;
+    const chosenUrl = isDark ? darkSnakeUrl : lightSnakeUrl;
+
+    snakeSource.srcset = chosenUrl;
+    snakeImage.src = chosenUrl;
+  }
+
   try {
     localStorage.setItem("theme", theme);
   } catch (error) {
