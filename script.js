@@ -4,6 +4,8 @@ const nav = document.getElementById("nav");
 const progressBar = document.getElementById("progressBar");
 const year = document.getElementById("year");
 const themeToggle = document.getElementById("themeToggle");
+const snakeSource = document.querySelector('.snake-wrap source');
+const snakeImage = document.querySelector('.snake-wrap img');
 
 // Set current year in footer
 if (year) {
@@ -133,8 +135,6 @@ if (repoCount && followersCount && followingCount && totalCommits && contributio
     });
 }
 
-const snakeSource = document.querySelector('.snake-wrap source');
-const snakeImage = document.querySelector('.snake-wrap img');
 if (snakeSource && snakeImage) {
   const cacheBust = Date.now();
   const snakeBase = 'https://rachelsigao.github.io/output';
