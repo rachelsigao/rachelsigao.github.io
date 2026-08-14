@@ -826,11 +826,21 @@ body.dark-theme .button.secondary:hover {
   overflow-x: auto;
   padding: 15px 5px;
   min-height: 120px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
 }
 
 .snake-wrap img {
   width: 100%;
   min-width: 750px;
+  display: block;
+}
+
+.snake-wrap img[src*="github-contribution-grid-snake"] {
+  opacity: 1;
 }
 
 .snake-note {
