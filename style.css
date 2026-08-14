@@ -731,7 +731,7 @@ body.dark-theme .button.secondary:hover {
   border-radius: 50%;
 }
 
-.timeline-date { color: var(--green); }
+.timeline-date { color: var(--green-dark); }
 
 .timeline-item h3 {
   margin: 10px 0;
