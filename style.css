@@ -814,38 +814,27 @@ body.dark-theme .button.secondary:hover {
   margin-top: 65px;
 }
 
-/* GitHub project card */
 .github-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  width: 100%;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: white;
 }
 
-.card-label {
-  color: #7b8792;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 600px) {
-  .github-card {
-    padding: 18px 16px;
-  }
-
-  .card-label {
-    margin-bottom: 14px;
-    font-size: 10px;
-    letter-spacing: .1em;
-  }
-}
-
 .github-stats-box {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  width: 100%;
 }
 
 .github-stat-item {
+  width: 100%;
+  min-height: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -854,99 +843,15 @@ body.dark-theme .button.secondary:hover {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--soft);
-  min-height: 110px;
 }
 
-.github-stat-item:first-child,
-.github-stat-item:nth-child(2),
-.github-stat-item:nth-child(3),
-.github-stat-item:nth-child(4) {
-  grid-column: auto;
-}
-
-@media (max-width: 600px) {
-  .github-stats-box {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .github-stat-item {
-    min-height: 96px;
-    padding: 14px 12px;
-  }
-
-  .github-stat-label {
-    letter-spacing: .08em;
-    font-size: 9px;
-  }
-
-  .github-stat-value {
-    font-size: clamp(20px, 5vw, 28px);
-  }
-}
-
-.github-stat-item.is-loading {
-  animation: statPulse 1s ease-in-out infinite alternate;
-}
-
-.github-stat-label {
-  color: #7b8792;
-  font: 600 10px "JetBrains Mono", monospace;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.github-stat-value {
-  color: var(--ink);
-  min-height: 1.2em;
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: 1;
-  letter-spacing: -.05em;
-}
-
-body.dark-theme .github-card {
-  background: #121820;
-  border-color: var(--dark-line);
-}
-
-body.dark-theme .github-stat-item {
-  background: #0d141a;
-  border-color: var(--dark-line);
-}
-
-body.dark-theme .github-stat-label,
-body.dark-theme .card-label {
-  color: #9aa8b6;
-}
-
-body.dark-theme .github-stat-value {
-  color: #edf2f7;
-}
-
-.github-card img {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-@keyframes statPulse {
-  from {
-    opacity: 0.75;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-1px);
-  }
-}
-
-/* Snake chart spans full width */
 .snake-card {
   grid-column: 1 / -1;
+  width: 100%;
 }
 
 .snake-wrap {
+  width: 100%;
   overflow: hidden;
   padding: 15px 5px;
   min-height: 120px;
@@ -957,13 +862,19 @@ body.dark-theme .github-stat-value {
   place-items: center;
 }
 
+.snake-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
 .snake-wrap picture,
 .snake-wrap img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
-  min-width: 0;
+  max-width: 100%;
 }
 
 .snake-wrap img[src*="github-contribution-grid-snake"] {
