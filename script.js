@@ -68,9 +68,10 @@ const repoCount = document.getElementById("repoCount");
 const followersCount = document.getElementById("followersCount");
 const followingCount = document.getElementById("followingCount");
 const totalCommits = document.getElementById("totalCommits");
+const contributionsCount = document.getElementById("contributionsCount");
 
-if (repoCount && followersCount && followingCount && totalCommits) {
-  const statItems = [repoCount, followersCount, followingCount, totalCommits];
+if (repoCount && followersCount && followingCount && totalCommits && contributionsCount) {
+  const statItems = [repoCount, followersCount, followingCount, totalCommits, contributionsCount];
 
   statItems.forEach(item => {
     item.textContent = "Loading...";
@@ -99,16 +100,20 @@ if (repoCount && followersCount && followingCount && totalCommits) {
       const profile = await profileResponse.json();
       const commitData = await commitResponse.json();
 
+      const contributionTotal = commitData.total_count ?? "--";
+
       repoCount.textContent = profile.public_repos ?? "--";
       followersCount.textContent = profile.followers ?? "--";
       followingCount.textContent = profile.following ?? "--";
-      totalCommits.textContent = commitData.total_count ?? "--";
+      totalCommits.textContent = contributionTotal;
+      contributionsCount.textContent = contributionTotal;
     })
     .catch(() => {
       repoCount.textContent = "N/A";
       followersCount.textContent = "N/A";
       followingCount.textContent = "N/A";
       totalCommits.textContent = "N/A";
+      contributionsCount.textContent = "N/A";
     })
     .finally(() => {
       statItems.forEach(item => {

@@ -831,7 +831,7 @@ body.dark-theme .button.secondary:hover {
 
 .github-stats-box {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
 }
@@ -852,15 +852,15 @@ body.dark-theme .button.secondary:hover {
 
 .github-stat-label {
   color: #586673;
-  font: 600 10px "JetBrains Mono", monospace;
-  letter-spacing: .12em;
+  font: 600 9px "JetBrains Mono", monospace;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 .github-stat-value {
   color: #111827;
   min-height: 1.2em;
-  font-size: clamp(22px, 2vw, 32px);
+  font-size: clamp(19px, 1.7vw, 28px);
   line-height: 1;
   letter-spacing: -.05em;
 }
@@ -1102,7 +1102,7 @@ footer a {
   .snake-card { grid-column: auto; }
 
   .github-stats-box {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
