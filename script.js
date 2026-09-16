@@ -80,10 +80,9 @@ const repoCount = document.getElementById("repoCount");
 const followersCount = document.getElementById("followersCount");
 const followingCount = document.getElementById("followingCount");
 const totalCommits = document.getElementById("totalCommits");
-const contributionsCount = document.getElementById("contributionsCount");
 
-if (repoCount && followersCount && followingCount && totalCommits && contributionsCount) {
-  const statItems = [repoCount, followersCount, followingCount, totalCommits, contributionsCount];
+if (repoCount && followersCount && followingCount && totalCommits) {
+  const statItems = [repoCount, followersCount, followingCount, totalCommits];
 
   statItems.forEach(item => {
     item.textContent = "Loading...";
@@ -97,35 +96,26 @@ if (repoCount && followersCount && followingCount && totalCommits && contributio
 
   Promise.all([
     fetch("https://api.github.com/users/rachelsigao", { headers }),
-    fetch("https://api.github.com/search/commits?q=author:rachelsigao&per_page=1", {
-      headers: {
-        ...headers,
-        Accept: "application/vnd.github.cloak-preview+json"
-      }
-    })
+    fetch("output/github-stats.json", { cache: "no-store" })
   ])
-    .then(async ([profileResponse, commitResponse]) => {
-      if (!profileResponse.ok || !commitResponse.ok) {
+    .then(async ([profileResponse, statsResponse]) => {
+      if (!profileResponse.ok || !statsResponse.ok) {
         throw new Error("GitHub API request failed");
       }
 
       const profile = await profileResponse.json();
-      const commitData = await commitResponse.json();
-
-      const contributionTotal = commitData.total_count ?? "--";
+      const stats = await statsResponse.json();
 
       repoCount.textContent = profile.public_repos ?? "--";
       followersCount.textContent = profile.followers ?? "--";
       followingCount.textContent = profile.following ?? "--";
-      totalCommits.textContent = contributionTotal;
-      contributionsCount.textContent = contributionTotal;
+      totalCommits.textContent = stats.totalContributions ?? "--";
     })
     .catch(() => {
       repoCount.textContent = "N/A";
       followersCount.textContent = "N/A";
       followingCount.textContent = "N/A";
       totalCommits.textContent = "N/A";
-      contributionsCount.textContent = "N/A";
     })
     .finally(() => {
       statItems.forEach(item => {
