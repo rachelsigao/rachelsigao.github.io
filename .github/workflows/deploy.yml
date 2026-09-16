@@ -37,6 +37,20 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Fetch GitHub contribution total
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          response=$(curl --fail-with-body --silent --show-error \
+            -H "Authorization: bearer $GH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query":"query($login:String!){user(login:$login){contributionsCollection{contributionCalendar{totalContributions}}}}","variables":{"login":"rachelsigao"}}' \
+            https://api.github.com/graphql)
+          total=$(echo "$response" | jq -r '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+          test "$total" != "null"
+          mkdir -p output
+          printf '{"totalContributions":%s,"updatedAt":"%s"}\n' "$total" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > output/github-stats.json
+
       # Upload built website as artifact
       - name: Upload website
         uses: actions/upload-pages-artifact@v3

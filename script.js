@@ -97,19 +97,20 @@ if (repoCount && followersCount && followingCount && totalCommits) {
   Promise.all([
     fetch("https://api.github.com/users/rachelsigao", { headers }),
     fetch("output/github-stats.json", { cache: "no-store" })
+      .then(response => response.ok ? response.json() : null)
+      .catch(() => null)
   ])
-    .then(async ([profileResponse, statsResponse]) => {
-      if (!profileResponse.ok || !statsResponse.ok) {
-        throw new Error("GitHub API request failed");
+    .then(async ([profileResponse, stats]) => {
+      if (!profileResponse.ok) {
+        throw new Error("GitHub profile request failed");
       }
 
       const profile = await profileResponse.json();
-      const stats = await statsResponse.json();
 
       repoCount.textContent = profile.public_repos ?? "--";
       followersCount.textContent = profile.followers ?? "--";
       followingCount.textContent = profile.following ?? "--";
-      totalCommits.textContent = stats.totalContributions ?? "--";
+      totalCommits.textContent = stats?.totalContributions ?? "--";
     })
     .catch(() => {
       repoCount.textContent = "N/A";
